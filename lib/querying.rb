@@ -16,13 +16,15 @@ def select_name_and_series_subgenres_of_authors
 end
 
 def select_series_title_with_most_human_characters
-  "SELECT series.title, characters.species FROM series INNER JOIN characters ;"
+  "SELECT series.title, characters.species FROM series INNER JOIN characters ON series.author_id = characters.author_id;"
   
   # grab the series title, which has books, which has characters, which have species.
   # I want to look at all the characters in a series
   # I want to group by series and by species
   # I want to look at humans only and COUNT
   # I want to return series with highest ount of human
+  # SERIES - title, author_id, subgenre_id
+  # CHARACTERS - name, motto, species, author_id
 end
 
 def select_character_names_and_number_of_books_they_are_in
