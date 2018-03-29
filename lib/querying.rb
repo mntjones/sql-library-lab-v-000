@@ -16,7 +16,7 @@ def select_name_and_series_subgenres_of_authors
 end
 
 def select_series_title_with_most_human_characters
-  "SELECT series.title, characters.species FROM series INNER JOIN characters IF characters.species = 'human';"
+  "SELECT series.title, characters.species FROM series INNER JOIN characters WHERE characters.species = 'human';"
   
   # grab the series title, which has books, which has characters, which have species.
   # I want to look at all the characters in a series
