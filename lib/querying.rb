@@ -20,9 +20,12 @@ def select_series_title_with_most_human_characters
 end
 
 def select_character_names_and_number_of_books_they_are_in
-  "SELECT characters.name, COUNT(character_books.book_id) FROM characters INNER JOIN character_books ON character_id GROUP BY characters.name ORDER BY COUNT(character_books.book_id);"
+  "SELECT characters.name, COUNT(character_books.book_id) FROM character_books INNER JOIN characters ON characters.id = character_books.character_id GROUP BY character_books.character_id ORDER BY COUNT(character_books.book_id);"
   
   # Characters have a name, motto, and species and belong to an author and a series
   # Books have a title and year and belong to a series
   # character_books will have two foreign key columns for the character and book ids
+  
+  # taking ch tabl, joining to chr_books on char ids
+  #
 end
