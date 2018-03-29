@@ -16,11 +16,13 @@ def select_name_and_series_subgenres_of_authors
 end
 
 def select_series_title_with_most_human_characters
-  "SELECT series.title, COUNT(characters.species) FROM series INNER JOIN characters GROUP BY characters.species HAVING characters.species = 'human' ORDER BY COUNT(characters.species) DESC LIMIT 1;"
+  "SELECT series.title FROM series INNER JOIN characters GROUP BY characters.series_id WHERE characters.species = 'human' ORDER BY COUNT(characters.species) DESC LIMIT 1;"
   
   # grab the series title, which has books, which has characters, which have species.
-  # I want to look at all the characters in a series and group by species
-  # then I want to count the number of characters in the species groups and return the one 
+  # I want to look at all the characters in a series
+  # I want to group by series and by species
+  # I want to look at humans only and COUNT
+  # I want to return series with highest ount of human
 end
 
 def select_character_names_and_number_of_books_they_are_in
