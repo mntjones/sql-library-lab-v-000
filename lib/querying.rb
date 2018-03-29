@@ -23,5 +23,6 @@ def select_character_names_and_number_of_books_they_are_in
   "SELECT character.name, COUNT(books) FROM characters INNER JOIN character_books WHERE ;"
   
   # Characters have a name, motto, and species and belong to an author and a series
-  
+  # Books have a title and year and belong to a series
+  # 
 end
