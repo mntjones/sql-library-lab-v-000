@@ -16,7 +16,7 @@ def select_name_and_series_subgenres_of_authors
 end
 
 def select_series_title_with_most_human_characters
-  "SELECT series.title, COUNT(characters.species = 'human') FROM series INNER JOIN characters GROUP BY characters.series_id WHERE characters.species = 'human' ORDER BY COUNT(characters.species) DESC;"
+  "SELECT series.title, COUNT(characters.species = 'human') FROM series INNER JOIN characters GROUP BY characters.series_id HAVING characters.species = 'human' ORDER BY COUNT(characters.species) DESC;"
   
   # grab the series title, which has books, which has characters, which have species.
   # I want to look at all the characters in a series
